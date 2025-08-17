@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +8,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     
     MatToolbarModule,
-    CommonModule
+    CommonModule,
+    MatGridListModule
 
   ],
   templateUrl: './home.component.html',

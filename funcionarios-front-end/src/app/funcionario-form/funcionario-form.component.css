@@ -1,0 +1,23 @@
+.input-form{
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+}
+
+.form-field{
+    width: 100%;
+}
+
+.card-title{
+    position: absolute;
+    left: 50px;
+}
+
+.input-primary{
+    padding-top: 50px;
+}
+
+.row-form{
+    display: flex;
+    gap: 16px;
+}

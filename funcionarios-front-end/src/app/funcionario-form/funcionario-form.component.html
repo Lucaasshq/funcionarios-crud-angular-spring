@@ -1,0 +1,53 @@
+
+<div class="container pd-5 mt-5">
+    <form name="funcionarios-form">
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title class="card-title"> Funcionarios</mat-card-title>
+        </mat-card-header>
+        <div class="input-form input-primary">
+            <mat-form-field class="form-field" appearance="outline"> 
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        </div>
+
+        <div class="input-form">
+            <mat-form-field class="form-field" appearance="outline"> 
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        </div>
+
+        <div class="input-form">
+            <mat-form-field class="form-field" appearance="outline"> 
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        </div>
+
+        <div class="input-form">
+            <mat-form-field class="form-field" appearance="outline"> 
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Placeholder">
+            </mat-form-field>
+        </div>
+
+        <div class="input-form row-form">
+            <mat-form-field >
+                <mat-label>exemplo</mat-label>
+                <mat-select [(ngModel)]="valorSelecionado" name="departamento">
+                    <mat-option [value]="de.value" *ngFor="let de of departamento">{{de.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+             <mat-form-field >
+                <mat-label>exemplo</mat-label>
+                <mat-select [(ngModel)]="valorSelecionado" name="departamento">
+                    <mat-option [value]="de.value" *ngFor="let de of departamento">{{de.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </mat-card>
+    </form>
+</div>
