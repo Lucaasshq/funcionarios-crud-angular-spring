@@ -1,53 +1,74 @@
-
 <div class="container pd-5 mt-5">
-    <form name="funcionarios-form">
-    <mat-card appearance="outlined">
-        <mat-card-header>
-            <mat-card-title class="card-title"> Funcionarios</mat-card-title>
-        </mat-card-header>
-        <div class="input-form input-primary">
-            <mat-form-field class="form-field" appearance="outline"> 
-                <mat-label>Nome</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </div>
+    <form #funcionarioForm="ngForm" (ngSubmit)="salvarFuncionario(funcionarioForm)">
+        <mat-card appearance="outlined">
+            <mat-card-header>
+                <mat-card-title class="card-title"> Funcionarios</mat-card-title>
+            </mat-card-header>
+            <div class="input-form input-primary">
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput placeholder="nome" name="nome" [(ngModel)]="funcionario.nome">
+                </mat-form-field>
+            </div>
 
-        <div class="input-form">
-            <mat-form-field class="form-field" appearance="outline"> 
-                <mat-label>Nome</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </div>
+            <div class="input-form">
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Contato</mat-label>
+                    <input matInput placeholder="Contato" name="contato" [(ngModel)]="funcionario.contato">
+                </mat-form-field>
+            </div>
 
-        <div class="input-form">
-            <mat-form-field class="form-field" appearance="outline"> 
-                <mat-label>Nome</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </div>
+            <div class="input-form">
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Endereço</mat-label>
+                    <input matInput placeholder="Endereço" name="endereco" [(ngModel)]="funcionario.endereco">
+                </mat-form-field>
+            </div>
+            <!-- 
+            <div class="input-form">
+                <mat-form-field class="form-field" appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput placeholder="Placeholder" >
+                </mat-form-field>
+            </div> -->
 
-        <div class="input-form">
-            <mat-form-field class="form-field" appearance="outline"> 
-                <mat-label>Nome</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </div>
+            <div class="input-form row-form">
+                <mat-form-field>
+                    <mat-label>departamento</mat-label>
+                    <mat-select [(ngModel)]="funcionario.departamento" name="departamento">
+                        <mat-option [value]="de.value" *ngFor="let de of departamento">{{de.viewValue}}</mat-option>
+                    </mat-select>
+                    {{funcionario.departamento | json}}
+                </mat-form-field>
 
-        <div class="input-form row-form">
-            <mat-form-field >
-                <mat-label>exemplo</mat-label>
-                <mat-select [(ngModel)]="valorSelecionado" name="departamento">
-                    <mat-option [value]="de.value" *ngFor="let de of departamento">{{de.viewValue}}</mat-option>
-                </mat-select>
-            </mat-form-field>
+                <mat-form-field>
+                    <mat-label>gênero</mat-label>
+                    <mat-select [(ngModel)]="funcionario.genero" name="genero">
+                        <mat-option [value]="ge.value" *ngFor="let ge of genero">{{ge.viewValue}}</mat-option>
 
-             <mat-form-field >
-                <mat-label>exemplo</mat-label>
-                <mat-select [(ngModel)]="valorSelecionado" name="departamento">
-                    <mat-option [value]="de.value" *ngFor="let de of departamento">{{de.viewValue}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </mat-card>
+                    </mat-select>
+                </mat-form-field>
+                {{funcionario.genero | json}}
+            </div>
+
+            <label class="label-checkbox">Skills</label>
+            <div class="section-checkbox">
+                <mat-checkbox name="skills" *ngFor="let sk of skills" [checked]="skillsSelecionadas[sk]" (change)="onSkillChange(sk, $event.checked)">
+                    {{ sk }}
+                </mat-checkbox>
+            </div>
+
+                            {{funcionario.skills| json}}
+
+       
+
+            <mat-divider class="divider"></mat-divider>
+
+            <div class="button-submit">
+                <button mat-flat-button class="button-clear">Basic</button>
+                <button mat-stroked-button>Basic</button>
+            </div>
+
+        </mat-card>
     </form>
 </div>

@@ -9,15 +9,47 @@
 }
 
 .card-title{
-    position: absolute;
-    left: 50px;
+    
+    margin-left: 20px;
 }
 
 .input-primary{
-    padding-top: 50px;
+    padding-top: 30px;
 }
 
 .row-form{
     display: flex;
     gap: 16px;
+}
+
+.section-checkbox{
+    display: flex;
+    margin-left: 40px;
+}
+
+.checkbox-item{
+    margin-left: 30px;
+    display: flex;
+}
+
+.label-checkbox{
+    margin-left: 34px;
+     
+}
+
+.button-submit{
+    display: flex;
+    margin-left: 40px;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.divider{
+   width: 92%;   
+  margin:  auto;
+}
+
+.button-clear{
+  background-color: #4caf50; 
+  color: white;
 }
