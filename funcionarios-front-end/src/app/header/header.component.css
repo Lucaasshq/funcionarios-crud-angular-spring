@@ -1,4 +1,21 @@
+.header-nome{
+    font-weight: 500;
+}
+
+.image-logo{
+    height: 140px;
+}
+
 .mat-toolbar{
     background-color: #D7E3FF;
     color: #005CBC;
+}
+
+.espaco{
+    flex: 1 1 auto;
+}
+
+.button-header{
+    display: flex;
+    gap: 12px;
 }

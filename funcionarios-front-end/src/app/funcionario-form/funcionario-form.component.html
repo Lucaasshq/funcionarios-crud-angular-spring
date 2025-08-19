@@ -2,19 +2,19 @@
     <form #funcionarioForm="ngForm" (ngSubmit)="salvarFuncionario(funcionarioForm)">
         <mat-card appearance="outlined">
             <mat-card-header>
-                <mat-card-title class="card-title"> Funcionarios</mat-card-title>
+                <mat-card-title class="card-title"> Cadastre-se</mat-card-title>
             </mat-card-header>
             <div class="input-form input-primary">
                 <mat-form-field class="form-field" appearance="outline">
                     <mat-label>Nome</mat-label>
-                    <input matInput placeholder="nome" name="nome" [(ngModel)]="funcionario.nome">
+                    <input matInput placeholder="nome" name="nome" [(ngModel)]="funcionario.nome"  minlength="5" required>
                 </mat-form-field>
             </div>
 
             <div class="input-form">
                 <mat-form-field class="form-field" appearance="outline">
                     <mat-label>Contato</mat-label>
-                    <input matInput placeholder="Contato" name="contato" [(ngModel)]="funcionario.contato">
+                    <input matInput placeholder="Contato" name="contato" [(ngModel)]="funcionario.contato_numero">
                 </mat-form-field>
             </div>
 
@@ -38,7 +38,7 @@
                     <mat-select [(ngModel)]="funcionario.departamento" name="departamento">
                         <mat-option [value]="de.value" *ngFor="let de of departamento">{{de.viewValue}}</mat-option>
                     </mat-select>
-                    {{funcionario.departamento | json}}
+                    <!-- {{funcionario.departamento | json}} -->
                 </mat-form-field>
 
                 <mat-form-field>
@@ -48,7 +48,7 @@
 
                     </mat-select>
                 </mat-form-field>
-                {{funcionario.genero | json}}
+                <!-- {{funcionario.genero | json}} -->
             </div>
 
             <label class="label-checkbox">Skills</label>
@@ -58,15 +58,14 @@
                 </mat-checkbox>
             </div>
 
-                            {{funcionario.skills| json}}
+                            <!-- {{funcionario.skills| json}} -->
 
        
 
             <mat-divider class="divider"></mat-divider>
 
             <div class="button-submit">
-                <button mat-flat-button class="button-clear">Basic</button>
-                <button mat-stroked-button>Basic</button>
+                <button mat-flat-button type="submit" class="button-clear">Salvar</button>
             </div>
 
         </mat-card>
