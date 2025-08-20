@@ -47,11 +47,29 @@
                 <td mat-cell *matCellDef="let element"> {{element.skills}} </td>
             </ng-container>
 
+            <ng-container matColumnDef="excluir">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-mini-fab class="button-excluir" (click)="excluirFuncionario(element.id)">
+                        <mat-icon>delete_forever</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="editar">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-mini-fab class="button-editar" (click)="editarFuncionario(element.id)">
+                        <mat-icon>edit_document</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
 
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+        <mat-paginator [pageSizeOptions]="[5,10, 20]" 
             aria-label="Select page of periodic elements">
         </mat-paginator>
     </div>

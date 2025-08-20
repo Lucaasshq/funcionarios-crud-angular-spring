@@ -79,7 +79,7 @@ export class FuncionarioFormComponent implements OnInit {
     skills: ''
   };
 
-  skills: string[] = ['Java', 'Angular', 'PHP', 'Spring Boot', 'Docker'];
+  skills: string[] = ['Java', 'Angular', 'PHP', 'Spring Boot', 'Docker',];
 
   skillsSelecionadas: { [key: string]: boolean } = {
     'Java': false,
