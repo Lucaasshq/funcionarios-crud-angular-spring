@@ -1,0 +1,53 @@
+<div>
+    <h2 mat-dialog-title> Editar </h2>
+    <mat-dialog-content>
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Nome</mat-label>
+            <input  matInput placeholder="Placeholder" [value]="data.nome" name="nome" [(ngModel)]="data.nome">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Contato</mat-label>
+            <input matInput placeholder="Placeholder" [value]="data.contato_numero" name="contato" [(ngModel)]="data.contato_numero">
+
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Endereço</mat-label>
+            <input matInput placeholder="Placeholder" [value]="data.endereco" name="endereco" [(ngModel)]="data.endereco">
+        </mat-form-field>
+
+        <div class="row-form">
+        <mat-form-field class="form-field">
+            <mat-label>Departamento</mat-label>
+            <mat-select name="departamento" [(ngModel)]="data.departamento">
+                <mat-option [value]="de.value" *ngFor="let de of departamento">{{de.viewValue}}</mat-option>
+            </mat-select>
+            <!-- {{funcionario.departamento | json}} -->
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+            <mat-label>Gênero</mat-label>
+            <mat-select name="genero" [(ngModel)]="data.genero">
+                <mat-option [value]="gene.value" *ngFor="let gene of genero">{{gene.viewValue}}</mat-option>
+            </mat-select>
+            <!-- {{funcionario.departamento | json}} -->
+        </mat-form-field>
+        </div>
+
+         <label class="label-checkbox">Skills</label>
+            <div class="section-checkbox">
+                <mat-checkbox name="skills" *ngFor="let sk of skills" [checked]="skillsSelecionadas[sk]"
+                    (change)="onSkillChange(sk, $event.checked)">
+                    {{ sk }}
+                </mat-checkbox>
+            </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>cancelar</button>
+        <button mat-button (click)="salvar()" cdkFocusInitial>ok</button>
+    </mat-dialog-actions>
+
+</div>

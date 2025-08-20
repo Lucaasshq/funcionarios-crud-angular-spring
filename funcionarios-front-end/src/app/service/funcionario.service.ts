@@ -21,11 +21,15 @@ export class FuncionarioService {
     return this.http.get<FuncionarioResponse>(this.apiUrl)
   }
 
+  public buscarPorId(id:number): Observable<Funcionario>{
+    return this.http.get<Funcionario>(`${this.apiUrl}/${id}`)
+  }
+
  public excluirFuncionario(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`)
   }
 
-public editarFuncionario(funcionario:Funcionario, id:string): Observable<Funcionario>{
+public editarFuncionario(id:Number ,funcionario:Funcionario): Observable<Funcionario>{
   return this.http.put<Funcionario>(`${this.apiUrl}/${id}`, funcionario)
 }
 

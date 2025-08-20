@@ -7,21 +7,23 @@
             <div class="input-form input-primary">
                 <mat-form-field class="form-field" appearance="outline">
                     <mat-label>Nome</mat-label>
-                    <input matInput placeholder="nome" name="nome" [(ngModel)]="funcionario.nome"  minlength="5" required>
+                    <input matInput placeholder="nome" name="nome" [(ngModel)]="funcionario.nome" minlength="5"
+                        required>
                 </mat-form-field>
             </div>
 
             <div class="input-form">
                 <mat-form-field class="form-field" appearance="outline">
                     <mat-label>Contato</mat-label>
-                    <input matInput placeholder="Contato" name="contato" [(ngModel)]="funcionario.contato_numero"required>
+                    <input matInput placeholder="Contato" name="contato" [(ngModel)]="funcionario.contato_numero"
+                        required>
                 </mat-form-field>
             </div>
 
             <div class="input-form">
                 <mat-form-field class="form-field" appearance="outline">
                     <mat-label>Endereço</mat-label>
-                    <input matInput placeholder="Endereço" name="endereco" [(ngModel)]="funcionario.endereco"required>
+                    <input matInput placeholder="Endereço" name="endereco" [(ngModel)]="funcionario.endereco" required>
                 </mat-form-field>
             </div>
             <!-- 
@@ -53,15 +55,13 @@
 
             <label class="label-checkbox">Skills</label>
             <div class="section-checkbox">
-                <mat-checkbox name="skills" *ngFor="let sk of skills" [checked]="skillsSelecionadas[sk]" (change)="onSkillChange(sk, $event.checked)">
+                <mat-checkbox name="skills" *ngFor="let sk of skills" [checked]="skillsSelecionadas[sk]"
+                    (change)="onSkillChange(sk, $event.checked)">
                     {{ sk }}
                 </mat-checkbox>
             </div>
 
-                            <!-- {{funcionario.skills| json}} -->
-
-       
-
+            <!-- {{funcionario.skills| json}} -->
             <mat-divider class="divider"></mat-divider>
 
             <div class="button-submit">
